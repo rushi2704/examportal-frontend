@@ -1,0 +1,53 @@
+<!-- <mat-card>
+    <mat-list>
+        <div mat-subheader>All Categories</div>
+        <mat-list-item *ngFor="let c of categories">
+            <div mat-line>{{c.title}}</div>
+            <div mat-line>{{c.description}}</div>
+
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+
+    <div class="container text-center mt20">
+        <button mat-raised-button color="primary">Add new category</button>
+
+    </div>
+</mat-card> -->
+<!-- <br> -->
+<!-- <mat-grid-list cols="5" gutterSize="16px" rowHeight="1:2" class="mt10" >
+  <mat-grid-tile *ngFor="let category of categories">
+    <mat-card >
+      <mat-card-header>
+        <mat-card-subtitle >{{ category.title }}</mat-card-subtitle>
+        <mat-card-subtitle>ID: {{ category.cid }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ category.description }}</p>
+        <button mat-fab extended color="primary">delete</button>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list> -->
+
+<div class="category-container"  fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="start stretch" >
+    <mat-card *ngFor="let category of categories" class="category-card">
+      <mat-card-header>
+        <div mat-card-avatar > <mat-icon mat-list-icon>category</mat-icon></div>
+       
+        <mat-card-title>{{ category.title }}</mat-card-title>
+        <mat-card-subtitle>Category ID: {{ category.cid }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ category.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="warn" (click)="deleteCategory(category.cid)" >Delete</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <div class="container text-center mt50">
+      <button routerLink="/admin/add-category" mat-fab extended color="primary">Add New Category</button>
+    </div>
+  </div> 
+  

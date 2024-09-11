@@ -1,0 +1,20 @@
+.w100{
+    width: 100%;
+}
+mat-card{
+    margin: 0.1%;
+    background-color: #fefefe;
+    border-radius: 0.1%;
+    background-position: center;
+    background-size: cover;
+    padding: 35px;
+    
+    
+    
+}
+.container{
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-end
+}

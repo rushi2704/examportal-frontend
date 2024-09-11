@@ -1,0 +1,49 @@
+.w100{
+    width:100%;
+}
+.form-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .half-width {
+    width: 48%;
+    margin-right: 14px;
+    /* margin-left: 14px; */
+    
+  }
+  
+  .status-switch {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .status-switch mat-slide-toggle {
+    margin-left: 10px;
+  }
+  
+  .submit-btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  mat-card{
+    margin: 0.1%;
+    background-color: #fefefe;
+    border-radius: 0.1%;
+    background-position: center;
+    background-size: cover;
+    padding: 35px;
+    
+    
+    
+}
+.mt20{
+    margin-top: 20px;
+}

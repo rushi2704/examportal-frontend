@@ -1,0 +1,37 @@
+<mat-card class="sidebar-card">
+    <mat-action-list>
+
+        <div mat-subheader>Menu</div>
+        <button routerLink="/admin" mat-button>
+            <mat-icon mat-list-icon>home</mat-icon>Home </button>
+
+            <button  mat-button routerLink="/admin/profile">
+                <mat-icon  mat-list-icon inline=true>account_circle</mat-icon>
+                Profile 
+            </button>
+            <button  mat-button routerLink="/admin/categories">
+                <mat-icon  mat-list-icon inline=true>list_alt</mat-icon>
+                Categories
+            </button>
+            <button  mat-button routerLink="/admin/add-category" class="no-wrap-button">
+                <mat-icon  mat-list-icon >playlist_add</mat-icon>Add Categories
+            </button>
+            <button  mat-button routerLink="/admin/view-quizzes">
+                <mat-icon  mat-list-icon inline=true>quiz</mat-icon>
+                Quizzes
+            </button>
+            <button  mat-button routerLink="/admin/add-quizzes">
+                <mat-icon  mat-list-icon inline=true>add_quiz</mat-icon>
+                Add Quizz
+            </button>
+            
+            <button  mat-button routerLink="/admin/logout">
+                <mat-icon  mat-list-icon inline=true>logout</mat-icon>
+                Log Out
+            </button>
+
+              
+    
+
+    </mat-action-list>
+</mat-card>

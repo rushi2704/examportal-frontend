@@ -1,0 +1,53 @@
+<mat-card *ngIf="user">
+    <h1>Profile</h1>
+    <!-- {{user | json}} -->
+    <mat-card-content>
+
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img src="https://media.istockphoto.com/id/610003972/vector/vector-businessman-black-silhouette-isolated.jpg?s=612x612&w=0&k=20&c=Iu6j0zFZBkswfq8VLVW8XmTLLxTLM63bfvI6uXdkacM="
+                     alt=""
+                     class="profile-image"
+                     >
+                     <h1 class="mt10">{{user.firstName}} {{user.lastName}}</h1>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-10 offset-md-1">
+                        <!-- table details -->
+                         <table class="table-container text-center">
+                            <tr>
+                                <th>Username</th>
+                                <td>{{user.userName}}</td>
+                            </tr>
+                            <tr>
+                                <th>UserId</th>
+                                <td>{{user.id}}</td>
+                            </tr>
+                            <tr>
+                                <th>Role</th>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                            <tr>
+                                <th>Phone</th>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td>{{user.enabled?"ACITVE":"NOT ACTIVE"}}</td>
+                            </tr>
+                         </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<br>
+    </mat-card-content>
+    <mat-card-actions class="item-center">
+        <button mat-raised-button color="primary">Update</button>
+        <button class="ml20" mat-raised-button>SHARE</button>
+      </mat-card-actions>
+</mat-card>

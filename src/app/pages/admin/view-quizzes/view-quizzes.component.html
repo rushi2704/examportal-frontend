@@ -1,0 +1,35 @@
+<div class="category-container" >
+<mat-card class="quiz-card" *ngFor="let q of quiz" [ngClass]="{'published-card':q.active}">
+    <mat-card-header>
+      <mat-card-title>{{ q.category.title }}</mat-card-title>
+      <mat-card-subtitle>Category ID: {{ q.categoryCid }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Quiz ID:</strong> {{ q.qId }}</p>
+      <p><strong>Description:</strong> {{ q.description }}</p>
+      <!-- <p><strong>Number of Questions:</strong> {{ q.number_question }}</p> -->
+      <!-- <p><strong>Max Marks:</strong> {{ q.max_mark }}</p> -->
+      <p><strong>Active:</strong> {{ q.active ? 'Yes' : 'No' }}</p>
+    </mat-card-content>
+    <mat-card-actions >
+    
+      <button  
+      [routerLink]="'/admin/view-questions/'+q.qId+'/'+q.title"
+
+      mat-raised-button color="primary">Question</button>
+
+      <button  mat-button color="primary" class="ml20">  Max Marks {{q.maxMarks}}</button>
+      <button  mat-button color="primary" class="ml20">  Questions {{q.numberQuestions}}</button>
+      <button 
+      [routerLink]="'/admin/quiz/' + q.qId " mat-raised-button color="primary" class="ml20">Update
+    </button>
+    
+    <button mat-raised-button color="warn" class="ml20" (click)="deleteQuiz(q.qId)">Delete Quiz</button>
+    </mat-card-actions>
+
+  </mat-card>
+
+  <div class="container text-center mt50">
+    <button routerLink="/admin/add-quizzes" mat-fab extended color="primary" >Add Quizz</button>
+  </div>
+</div>

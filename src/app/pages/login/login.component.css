@@ -1,0 +1,14 @@
+.full-width{
+    width: 100%;
+}
+mat-card{
+    margin: 0.1%;
+    background-color: #fefefe;
+    border-radius: 0.1%;
+    background-position: center;
+    background-size: cover;
+    padding: 35px;
+    
+    
+    
+}
