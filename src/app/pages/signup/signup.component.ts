@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import Swal from 'sweetalert';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-signup',
@@ -63,7 +63,7 @@ public user={
       //  this.snak.open('success','',{
       //   duration:3000,
       //  })
-      Swal('Success','User id is '+data.id,'success');
+      Swal.fire('Success','User id is '+data.id,'success');
       },
       (error)=>{
         //error

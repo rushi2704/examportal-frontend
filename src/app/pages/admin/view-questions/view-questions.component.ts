@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionService } from '../../../services/question.service';
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: 'app-view-questions',
   templateUrl: './view-questions.component.html',
@@ -13,6 +13,7 @@ export class ViewQuestionsComponent  implements OnInit{
   qTitle:any;
   questions=[ {
 
+    qId:'',
     content:'',
     option1:'',
     option2:'',
@@ -44,4 +45,37 @@ this._question.getQuestionOfQuiz(this.qId).subscribe(
 );
   }
 
+  // delete question 
+  deleteQuestion(qid:any)
+  {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result)=>{
+      if(result.isConfirmed)
+      {
+        this._question.deleteQuestion(qid).subscribe(
+          (data)=>{
+            this.questions=this.questions.filter((questions)=>questions.qId!=qid);
+            Swal.fire('Success','Question deleted','success');
+          }, (error)=>{
+            Swal.fire('error','error while deleting','error');
+        
+          }
+        
+        );
+
+      }
+    })
+
+    
+  }
+
 }
+
+

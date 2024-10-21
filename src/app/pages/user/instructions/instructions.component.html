@@ -1,0 +1,66 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card>
+                    <mat-card-header>
+                        <!-- heading    -->
+                         <mat-card-title>
+                            <H1>Read the Instructions </H1>
+                         </mat-card-title>
+                         
+                    </mat-card-header>
+                    <mat-divider></mat-divider>
+                    <mat-card-content class="ml20">
+                        
+                        <!-- content  -->
+                         <h2 style="color: blue;">{{quiz.title}}</h2>
+                         <P>{{quiz.description}}</P>
+
+                         <mat-divider></mat-divider>
+                         <br>
+                         <h1>Important Instructions</h1>
+
+                         <ul>
+                            <li>This quiz is only for practice purpose</li>
+                            <li>Read Carefully: Ensure you read each question and all the answer choices thoroughly before selecting your answer.</li>
+                            <li>Time Limit: The quiz is timed. Make sure to manage your time wisely for each question.</li>
+                            <li>Single-Answer Questions: Choose the most appropriate answer from the options provided. Only one answer is correct for each question unless stated otherwise.</li>
+                            <li>Submission: Ensure all questions are answered before submitting the quiz. Once submitted, no changes can be made.</li>
+                            <li>There are <b>{{quiz.numberQuestions}} questios in quiz</b></li>
+                            <li>Each question carries  <b>{{quiz.maxMarks /quiz.numberQuestions}} marks </b>.
+                                No negative marking for wrong ones
+                            </li>
+                            <li>You have to submit quiz within time</li>
+                         </ul>
+                         <mat-divider></mat-divider>
+                         <br>
+                         <h1>Attempting Quiz</h1>
+                         <ul>
+                            <li>Click Start Quiz button to start the quiz
+                            </li>
+                            <li>The time will start the moment you click the Start Test button.
+                            </li>
+                            <li>You can not resume this quiz, if interrupted due to any reason.
+                            </li>
+                            <li>Scroll downi to move to next question.
+                            </li>
+                            <li>Click on Submit Quiz button on completion of the quiz.
+                            </li>
+                            <li> Report of the test is automatically generated in the form of PDF copy</li>
+                         </ul>
+
+                    </mat-card-content>
+
+                    <div class="container text mt20 mb20" >
+                        <button mat-fab extended color="primary" 
+                        (click)="startQuiz()" >Start</button>
+                    </div>
+                  
+
+                    
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

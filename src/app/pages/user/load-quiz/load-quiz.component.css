@@ -1,0 +1,25 @@
+.truncate{
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mt20{
+    margin-top: 20px;
+}
+.text{
+    /* text-align: right; */
+    margin-top: 10px; white-space: nowrap;
+}
+mat-card{
+    margin: 0.1%;
+    background-color: #fefefe;
+    border-radius: 0.1%;
+    background-position: center;
+    background-size: cover;
+    padding: 10px;
+    
+    
+    
+}

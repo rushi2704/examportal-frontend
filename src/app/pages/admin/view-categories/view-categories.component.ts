@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../../services/category.service';
 import { log } from 'console';
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: 'app-view-categories',
   templateUrl: './view-categories.component.html',
@@ -27,7 +27,7 @@ export class ViewCategoriesComponent implements OnInit{
   (error)=>{
     //
    console.log(error)
-   swal("Error !!","error in loading data",'error');
+   Swal.fire("Error !!","error in loading data",'error');
   });
   }
 
@@ -36,10 +36,10 @@ export class ViewCategoriesComponent implements OnInit{
     this._category.deleteCategory(cid).subscribe(
       (data:any)=>{
         this.categories=this.categories.filter((categoires)=>categoires.cid!=cid);
-        swal('Success','quiz deleted','success');
+        Swal.fire('Success','quiz deleted','success');
       },
       (error)=>{
-        swal('error','error while deleting','error');
+        Swal.fire('Error','Category contain quizzes','error');
 
       }
     )

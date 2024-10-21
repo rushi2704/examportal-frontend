@@ -4,7 +4,7 @@ import { QuizzService } from '../../../services/quizz.service';
 import { CategoryService } from '../../../services/category.service';
 import { error } from 'console';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: 'app-update-quiz',
   templateUrl: './update-quiz.component.html',
@@ -53,11 +53,11 @@ export class UpdateQuizComponent implements OnInit{
    
     /// validation
     this._quiz.updateQuiz(this.quiz).subscribe((data)=>{
-       swal('Success','Update Success','success').then((e)=>{
+       Swal.fire('Success','Update Success','success').then((e)=>{
         this._router.navigate(['/admin/view-quizzes']);
        });
     },(error)=>{
-      swal('error','error in updating quiz ','error');
+      Swal.fire('error','error in updating quiz ','error');
     }); 
   }
 }

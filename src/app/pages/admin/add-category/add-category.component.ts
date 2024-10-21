@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../../services/category.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { error, log } from 'console';
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
@@ -38,11 +38,15 @@ export class AddCategoryComponent implements OnInit {
      // all done 
   this._category.addCategory(this.category).subscribe(
     (data:any)=>{
-      swal('Success !!','Category is added sucess','success');
+      Swal.fire('Success !!','Category is added sucess','success');
+      this.category={
+        title:'',
+        description:'',
+      };
     },
     (error)=>{
       console.log(error);
-      swal('Error !!','server error','error')
+      Swal.fire('Error !!','server error','error')
     }
   )
 

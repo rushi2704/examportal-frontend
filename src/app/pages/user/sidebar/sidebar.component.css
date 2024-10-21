@@ -1,10 +1,21 @@
+mat-card{
+    margin: 0.1%;
+    background-color: #fefefe;
+    border-radius: 0.1%;
+    background-position: center;
+    background-size: cover;
+    padding: 9px;
+    
+    
+    
+}
 .no-wrap-button {
     white-space: nowrap; /* Prevents the text from wrapping to the next line */
     display: flex; /* Use flexbox for better alignment */
     align-items: center; /* Aligns icon and text vertically in the center */
   }
   
-  .no-wrap-button{
+  .no-wrap-button  {
     margin-right: 8px; /* Optional: Adds some space between the icon and the text */
     margin-top: 5px;
   }
@@ -15,14 +26,3 @@
       transform: translateY(5px);
     }
   }
-  mat-card{
-    margin: 0.1%;
-    background-color: #fdfdfd;
-    border-radius: 0.1%;
-    background-position: center;
-    background-size: cover;
-    padding: 35px;
-    
-    
-    
-}

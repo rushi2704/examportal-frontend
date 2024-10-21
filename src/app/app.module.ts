@@ -39,7 +39,18 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewQuestionsComponent } from './pages/admin/view-questions/view-questions.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
+import { SidebarComponent as UserSidebar} from './pages/user/sidebar/sidebar.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { StartComponent } from './pages/user/start/start.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {NgxUiLoaderModule, NgxUiLoaderHttpModule} from "ngx-ui-loader"
 
 @NgModule({
   declarations: [
@@ -59,7 +70,13 @@ import { ViewQuestionsComponent } from './pages/admin/view-questions/view-questi
     ViewQuizzesComponent,
     AddQuizzesComponent,
     UpdateQuizComponent,
-    ViewQuestionsComponent
+    ViewQuestionsComponent,
+    AddQuestionComponent,
+    UpdateQuestionComponent,
+    UserSidebar,
+    LoadQuizComponent,
+    InstructionsComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +98,16 @@ import { ViewQuestionsComponent } from './pages/admin/view-questions/view-questi
     MatDividerModule,
     FlexLayoutModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSidenavModule,
+    SweetAlert2Module,
+    MatRadioModule,
+    MatProgressSpinnerModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true,
+    }),
+    
   ],
   providers: [
     provideClientHydration(),

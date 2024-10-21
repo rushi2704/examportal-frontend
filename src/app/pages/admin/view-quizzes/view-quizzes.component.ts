@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { title } from 'process';
 import { QuizzService } from '../../../services/quizz.service';
-import { SweetAlert } from 'sweetalert/typings/core';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { error } from 'console';
 
 @Component({
@@ -54,7 +54,7 @@ export class ViewQuizzesComponent implements OnInit {
       },
       (error)=>{
         console.log( error);
-        swal('Error','Error in loading data','error');
+        Swal.fire('Error','Error in loading data','error');
         
       }
     );
@@ -63,17 +63,33 @@ export class ViewQuizzesComponent implements OnInit {
     // delete quizz 
      deleteQuiz(qId:any)
   {
-  
-    
-    this._quizz.deleteQuiz(qId).subscribe(
-      (data)=>{
-        this.quiz=this.quiz.filter((quiz)=>quiz.qId!=qId);
-        swal('Success','quiz deleted','success');
-      },
-      (error)=>{
-        swal('error','error while deleting','error');
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result)=>{
+      if(result.isConfirmed)
+      {
+        this._quizz.deleteQuiz(qId).subscribe(
+          (data)=>{
+            this.quiz=this.quiz.filter((quiz)=>quiz.qId!=qId);
+            Swal.fire('Success','quiz deleted','success');
+          },
+          (error)=>{
+            Swal.fire('error','error while deleting','error');
+        
+          }
+        );
 
       }
-    );
+    })
+    
+    
   }
 }
+
+
